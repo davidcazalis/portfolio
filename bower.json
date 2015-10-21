@@ -1,0 +1,25 @@
+{
+  "name": "portfolio",
+  "version": "0.0.1",
+  "homepage": "https://github.com/davidcazalis/portfolio",
+  "authors": [
+    "David Cazalis <davidcazalis@gmail.com>"
+  ],
+  "description": "My own personnal and very mine portfolio.",
+  "license": "GNU",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "modernizr": "2.7.2",
+    "fitvids": "https://github.com/davatron5000/FitVids.js.git",
+    "fastclick": "~1.0.6",
+    "normalize-css": "~3.0.3"
+  }
+}
