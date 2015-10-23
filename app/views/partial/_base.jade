@@ -16,6 +16,7 @@ html(class='no-js' lang='')
       link(href='#{stylesPath}/app.css' media='screen' rel='stylesheet' type='text/css')
 
   body
-    block main
+    .u-wrapper(id="main-wrapper")
+      block main
     block scripts
       include _scripts
