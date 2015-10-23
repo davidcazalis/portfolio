@@ -1,7 +1,12 @@
 'use strict';
 
-// Add external config file
+// Settings
+// ==========================================================================
+
 var config = require('./config.json');
+
+//
+// ==========================================================================
 
 var browserSync = require('browser-sync').create(),
   del = require('del'),
@@ -25,6 +30,7 @@ var gulp = require('gulp'),
   imagemin = require('gulp-imagemin'),
   iconfont = require('gulp-iconfont'),
   shell = require('gulp-shell'),
+  svgSprite = require('gulp-svg-sprite'),
   bower = require('gulp-bower');
 
 function clean(path, files) {
@@ -39,9 +45,24 @@ function clean(path, files) {
 // Assets
 // ==========================================================================
 
+// Create SVG sprites
+gulp.task('svg-sprite', function() {
+  return gulp.src(['*.svg', '!sprite.svg'], {cwd: config.media.src})
+    .pipe(svgSprite({
+      mode: {
+        symbol: {
+          dest: '',
+          bust: false,
+          sprite: 'sprite.svg'
+        }
+      }
+    }))
+    .pipe(gulp.dest(config.media.src));
+});
+
 // Images optimisation
 gulp.task('media', function() {
-  return gulp.src(config.media.src)
+  return gulp.src(config.media.src+'/**/*')
     .pipe(gulpif(options.production, imagemin({
       progressive: true,
       svgoPlugins: [{
@@ -174,6 +195,7 @@ gulp.task('live', function() {
   gulp.watch(config.libs, ['scripts']);
   gulp.watch(config.scripts.src, ['scripts']);
   gulp.watch(config.icons.src, ['iconfont', 'styles']);
+  gulp.watch([config.media.src + '/*.svg', !config.media.src + '/sprite.svg'], ['svg-sprite', 'templates']);
   gulp.watch(config.templates.dest + '/*.html').on('change', browserSync.reload);
 });
 
@@ -190,7 +212,7 @@ gulp.task('bower', function() {
 // Tasks
 // ==========================================================================
 
-gulp.task('assets', ['media', 'iconfont', 'styles', 'fonts']);
+gulp.task('assets', ['svg-sprite', 'media', 'iconfont', 'styles', 'fonts']);
 gulp.task('scripts', ['scripts:hint', 'scripts:vendor', 'scripts:app']);
 
 gulp.task('default', ['bower','assets', 'templates', 'scripts']);

@@ -1,0 +1,19 @@
+// ==========================================================================
+// ISLAND
+// ==========================================================================
+
+[class*="o-island"] {
+  *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.o-island--vert {
+  padding-top: _em($_layout-space);
+  padding-bottom: _em($_layout-space);
+}
+
+.o-island--horz {
+  padding-left: _em($_layout-space);
+  padding-right: _em($_layout-space);
+}

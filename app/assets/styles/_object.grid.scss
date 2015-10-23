@@ -1,0 +1,198 @@
+// ==========================================================================
+// GRID
+// ==========================================================================
+
+$_grid: $_layout-grid !default;
+
+// Core
+// ==========================================================================
+
+// Set columns width
+// @param {Number} $width [12] - The column width
+// @param {Number} $gutter - Size of the column gutter
+// @param {String} $float [false] - Add float property, left or right
+@mixin grid-col(
+  $width: map-get($_grid, columns),
+  $gutter: _rem(map-get($_grid, gutters)),
+  $float: left) {
+
+  @if $float { float: $float; }
+  @if $gutter {
+    padding-left: $gutter;
+    padding-right: $gutter;
+  }
+  width: percentage($width / map-get($_grid, columns));
+}
+
+// Set columns offset
+// @param {Number} $width [0] - The column width of this offset
+// @param {String} $side [left] - Offset side, left or right
+// @param {Bool, String} $flow [false] - Classic offset, or a margin based offset
+// @parem {Bool} $relative [true] - Add a relative position property
+@mixin grid-col-offset(
+  $width: 0,
+  $side: left,
+  $flow: false,
+  $relative: true) {
+
+  // Set the offset with margin
+  @if $flow {
+    margin-#{$side}: percentage($width / map-get($_grid, columns));
+  } @else { // Set the offset with left/right
+    @if $relative { position: relative; }
+    #{$side}: percentage($width / map-get($_grid, columns));
+  }
+}
+
+// Centered columns
+@mixin grid-col-centered() {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Syntaxic grid
+// ==========================================================================
+
+// Grid row
+@mixin grid-container() {
+  @include clearfix();
+  margin-left: auto;
+  margin-right: auto;
+  max-width: _rem(map-get($_grid, width));
+}
+
+
+// Grid column
+// @param {Number} $width [false] - Column width
+// @param {Bool} $center [false] - Align the column in the middle or the row
+// @param {Number} $offset [false] - Offset width
+// @param {Number} $pull [false] - Pull width
+// @param {Number} $push [false] - Push width
+// @param {Number, Bool} $gutter [15px] - Size of the column gutter
+// @param {String, Bool} $float [false] - Add float property, left or right, or false.
+@mixin grid-column(
+  $width: false,
+  $center: false,
+  $offset: false,
+  $pull: false,
+  $push: false,
+  $gutter: _rem(map-get($_grid, gutters)),
+  $float: left
+) {
+
+  @if $center {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+    @include grid-col($width, $gutter, false);
+
+  } @else {
+
+    @if $width {
+      position: relative;
+      @include grid-col($width, $gutter, $float);
+    }
+
+    @if $offset {
+      @include grid-col-offset($offset, left, true, false);
+    }
+
+    @if $pull {
+      @include grid-col-offset($pull, right, false, false);
+    }
+
+    @if $push {
+      @include grid-col-offset($push, left, false, false);
+    }
+  }
+}
+
+// Classic grid
+// ==========================================================================
+
+.o-row {
+  @include grid-container();
+}
+
+.o-columns,
+.o-column {
+  float: left;
+  width: 100%;
+  position: relative;
+  padding-left: _rem(map-get($_grid, gutters));
+  padding-right: _rem(map-get($_grid, gutters));
+
+  // Float right on the last child
+  & + &:last-child {
+    float: right;
+
+    // Nope.
+    &.last {
+      float: left;
+    }
+  }
+}
+
+// Grid set
+// Create classes for grid columns, offset, pull and push
+// @param {String} $prefix - Class prefix
+@mixin grid-set($prefix) {
+  @for $i from 1 through map-get($_grid, columns) {
+
+    // Columns
+    .#{$prefix}-#{$i} {
+      @include grid-col($i, $gutter: false, $float: false);
+    }
+
+    // Pull
+    .#{$prefix}-pull-#{$i} {
+      @include grid-col-offset($i, $side: right, $relative:false)
+    }
+
+    // Push
+    .#{$prefix}-push-#{$i} {
+      @include grid-col-offset($i, $side: left, $relative:false)
+    }
+
+    // Offset
+    .#{$prefix}-offset-#{$i} {
+      @include grid-col-offset($i, $side: left, $flow: true, $relative:false)
+    }
+  }
+}
+
+// For each breakpoint key, generate a grid set
+@each $breakpoint-name, $breakpoint-value in map-get($_grid, breakpoints) {
+
+  // Mobile first, don't need media query
+  @if $breakpoint-name ==  small {
+    @include grid-set($breakpoint-name);
+
+    .#{$breakpoint-name}-centered {
+      @include grid-col-centered();
+    }
+  }
+
+  // Medium breakpoint
+  @if $breakpoint-name == medium {
+    @include bp(small) {
+      @include grid-set($breakpoint-name);
+
+      .#{$breakpoint-name}-centered {
+        @include grid-col-centered();
+      }
+    }
+  }
+
+  // Large breakpoint
+  @if $breakpoint-name == large {
+    @include bp(medium) {
+      @include grid-set($breakpoint-name);
+
+      .#{$breakpoint-name}-centered {
+        @include grid-col-centered();
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+append mixins
+
+  -// Use svg sprite symbols
+  mixin svg-sprite(svg, svgClass)
+    .u-svg-wrapper(class="#{svgClass}")
+      svg(class="#{svgClass}__svg")
+        use(xlink:href="#{mediaPath}/sprite.svg##{svg}" class="#{svgClass}__use")

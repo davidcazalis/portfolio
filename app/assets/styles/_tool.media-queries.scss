@@ -1,0 +1,57 @@
+// ==========================================================================
+// MEDIA QUERIES
+// ==========================================================================
+
+$_breakpoints: $_layout-breakpoints !default;
+
+// Functions
+// ==========================================================================
+
+// Check if values are valid and can be used on media queries.
+@function bp-key($value) {
+  @if map-has-key($_breakpoints, $value) {
+    @return map-get($_breakpoints, $value);
+  }
+  @else if type_of($value) == string {
+    @warn 'Warning : "#{$value}"" is not a valid value. You can only use those keywords : #{map-keys($_breakpoints)}.';
+  }
+  @else if unitless($value){
+    @warn 'Warning : "#{$value}"" has no unit.';
+  }
+  @else if unit($value) == 'rem' {
+    @return _strip-unit($value)*1em;
+  }
+  @else {
+    @return if(unit($value) == 'px', _em($value), $value);
+  }
+}
+
+// Mixins
+// ==========================================================================
+
+// Mobile first media queries
+// @param {Number} $from - Min width value
+// @param {Number} $until - Max width value
+@mixin bp(
+  $from: false,
+  $until: false
+) {
+
+  @if $until and $from == false {
+    @media (max-width: #{bp-key($until)}) {
+      @content;
+    }
+  }
+
+  @else if $from and $until {
+    @media (min-width: #{bp-key($from)+0.063em}) and (max-width:#{bp-key($until)}) {
+      @content;
+    }
+  }
+
+  @else if $from and $until == false {
+    @media (min-width: #{bp-key($from)+0.063em}) {
+      @content;
+    }
+  }
+}

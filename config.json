@@ -1,7 +1,7 @@
 {
   "libs": "app/libs",
   "media" : {
-    "src" : "app/assets/media/**/*",
+    "src" : "app/assets/media",
     "dest" : "build/assets/media"
   },
   "icons" : {

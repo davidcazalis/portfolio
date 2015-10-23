@@ -1,3 +1,24 @@
 extends partial/_base
 
 append main
+
+  block header
+    header.c-header(role="banner" id="header")
+      div.c-header__logo
+        h1.c-logo: a.c-logo__link(href="#")
+            include ../assets/media/dc-logo.svg
+      div.c-header__nav
+        nav.c-navigation(role="navigation" id="navigation")
+          ul.c-navigation__list
+            each section in navSection
+              li.c-navigation__list__item: a(href="##{section.toLowerCase()}") #{section}
+        
+  block landing
+    section.o-section.m-hero(id="hero")
+      .o-row.u-align--center
+        .m-hero__title.o-island--vert.o-column.medium-10.medium-offset-1
+          span.typo-hero David Cazalis
+          h2.typo-hero--body Développeur front-end et webdesigner, à Clermont-Ferrand en France.
+        .m-hero__cta.o-island--vert.o-column
+          a.c-btn(href="mailto:davidcazalis@gmail.com") Me contacter
+        

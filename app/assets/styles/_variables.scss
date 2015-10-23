@@ -1,0 +1,61 @@
+// ==========================================================================
+// VARIABLES
+// ==========================================================================
+
+// Color swatch
+$_color-brand: #41CCA5;
+$_color-brand-dark: #234038;
+
+$_color-white: #DFE5EB;
+$_color-grey-light: #9BA7B3;
+$_color-grey: #393E40;
+$_color-grey-dark: #222526;
+$_color-black: #16181A;
+
+// Base
+// ==========================================================================
+
+// Typography
+$_base-font-size: 16px !default;
+$_base-font-line-height: 1.5 !default;
+$_base-font-space: $_base-font-size * $_base-font-line-height !default;
+$_base-font-family: 'Lato', sans-serif !default;
+$_base-font-family-headings: 'Montserrat', sans-serif;
+$_base-font-color: $_color-grey-light !default;
+
+$_base-font-size-h1: 48px !default;
+$_base-font-size-h2: 30px !default;
+$_base-font-size-h3: 18px !default;
+$_base-font-size-h4: 18px !default;
+$_base-font-size-h5: 16px !default;
+$_base-font-size-h6: 14px !default;
+
+$_base-font-links-color: $_color-brand !default;
+$_base-font-links-color-hover: darken($_base-font-links-color, 5%) !default;
+$_base-font-links-color-focus: darken($_base-font-links-color, 10%) !default;
+$_base-font-links-text-decoration: none;
+
+// Tables
+$_base-tables-padding: $_base-font-space !default;
+$_base-tables-border-width: 1px;
+$_base-tables-border-color: $_color-grey-light;
+
+// Layout
+// ==========================================================================
+
+$_layout-space: $_base-font-space !default;
+
+// Breakpoints
+$_layout-breakpoints: (
+  small: 40em,
+  medium: 64em,
+  large: 75em
+) !default;
+
+// Grid
+$_layout-grid: (
+  width: 1100px,
+  columns: 12,
+  gutters: 15px,
+  breakpoints: $_layout-breakpoints
+) !default;

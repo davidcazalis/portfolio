@@ -1,0 +1,118 @@
+// ==========================================================================
+// TYPOGRAPHY
+// ==========================================================================
+
+html {
+  font-size: $_base-font-size;
+  color: $_base-font-color;
+  font-family: $_base-font-family;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: $_color-black;
+  line-height: $_base-font-line-height;
+  font-size: _em($_base-font-size);
+}
+
+// Headings
+// ==========================================================================
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: _em($_base-font-space);
+}
+
+h1 {
+  font-size: _rem($_base-font-size-h1);
+}
+
+h2 {
+  font-size: _rem($_base-font-size-h2);
+}
+
+h3 {
+  font-size: _rem($_base-font-size-h3);
+}
+
+h4 {
+  font-size: _rem($_base-font-size-h4);
+}
+
+h5 {
+  font-size: _rem($_base-font-size-h5);
+}
+
+h6 {
+  font-size: _rem($_base-font-size-h6);
+}
+
+
+// Block elements
+// ==========================================================================
+
+p,
+ul,
+ol,
+blockquote {
+  margin-top: 0;
+  margin-bottom: _em($_base-font-space);
+}
+
+blockquote {
+  margin-left: 0;
+  padding-left: $_base-font-space;
+  border-left: 3px solid $_color-grey-light;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  cite {
+    font-size: .8em;
+    &:before { content: "\2014 \0020"; }
+  }
+}
+
+// Inline elements
+// ==========================================================================
+
+// Links
+a {
+  color: $_color-brand;
+  text-decoration: $_base-font-links-text-decoration;
+
+  &:hover {
+    color: $_base-font-links-color-hover;
+  }
+
+  &:focus {
+   color: $_base-font-links-color-focus;
+   outline: $_base-font-links-color-focus dotted _em(2px);
+  }
+}
+
+// Code
+code,
+kbd,
+pre,
+samp {
+  border-radius: .2em;
+  padding-left: .2em;
+  padding-right: .2em;
+  background-color: $_color-grey-light;
+}
+
+// Extra
+// ==========================================================================
+
+::selection {
+  background-color: $_color-brand;
+  color: $_color-white;
+}

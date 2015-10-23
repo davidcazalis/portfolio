@@ -1,0 +1,54 @@
+// ==========================================================================
+// TYPOGRAPHY
+// ==========================================================================
+
+// Titles
+// ==========================================================================
+
+%typo-titles-font {
+  font-family: $_base-font-family-headings;
+}
+
+%typo-titles-weight {
+  font-weight: bold;
+}
+
+%typo-titles-upper {
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @extend %typo-titles-upper;
+}
+
+h1,
+h2,
+h3 {
+  @extend %typo-titles-font;
+  color: $_color-white;
+}
+
+h4,
+h5,
+h6 {
+  font-weight: 300;
+}
+
+.typo-hero {
+  @extend %typo-titles-font;
+  @extend %typo-titles-upper;
+  @extend %typo-titles-weight;
+  color: $_color-brand;
+  font-size: _em(72px);
+}
+
+.typo-hero--body {
+  @extend %typo-titles-font;
+  text-transform: none;
+  font-size: _em(32px);
+}

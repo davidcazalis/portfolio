@@ -1,10 +1,6 @@
 // ==========================================================================
-// APP
+// DOC
 // ==========================================================================
-
-// Libs
-// ==========================================================================
-// @import '../../libs/normalize-css/normalize';
 
 // Variables
 // ==========================================================================
@@ -16,35 +12,14 @@
 @import "function.em";
 @import "function.rem";
 
-
 // Utilities
 // ==========================================================================
 @import "tool.clearfix";
 @import "tool.font-face";
 @import "tool.media-queries";
-@import "tool.svg";
-@import "tool.align";
 
 // Base
 // ==========================================================================
 @import "base.box-sizing";
 @import "base.reset";
-@import "base.forms";
 @import "base.box-sizing";
-@import "base.typography";
-@import "base.tables";
-
-// Objects
-// ==========================================================================
-@import 'object.island';
-@import 'object.grid';
-
-// Components
-// ==========================================================================
-@import 'component.iconfont';
-@import 'component.typography';
-@import 'component.logo';
-
-// Module
-// ==========================================================================
-@import 'module.hero'
