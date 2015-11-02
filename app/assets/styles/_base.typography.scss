@@ -26,43 +26,87 @@ h4,
 h5,
 h6 {
   margin-top: 0;
-  margin-bottom: _em($_base-font-space);
+  margin-bottom: _rem($_base-font-space/1.5);
+
+  @include bp(medium) {
+    margin-bottom: _rem($_base-font-space);
+  }
 }
 
 h1 {
-  font-size: _rem($_base-font-size-h1);
+  font-size: _em($_base-font-size-h1/1.5);
+
+  @include bp(medium) {
+    font-size: _em($_base-font-size-h1);
+  }
 }
 
 h2 {
-  font-size: _rem($_base-font-size-h2);
+  font-size: _em($_base-font-size-h2/1.5);
+
+  @include bp(medium) {
+    font-size: _em($_base-font-size-h2);
+  }
 }
 
 h3 {
-  font-size: _rem($_base-font-size-h3);
+  font-size: _em($_base-font-size-h3/1.5);
+
+  @include bp(medium) {
+    font-size: _em($_base-font-size-h3);
+  }
 }
 
 h4 {
-  font-size: _rem($_base-font-size-h4);
+  font-size: _em($_base-font-size-h4/1.5);
+
+  @include bp(medium) {
+    font-size: _em($_base-font-size-h4);
+  }
 }
 
 h5 {
-  font-size: _rem($_base-font-size-h5);
+  font-size: _em($_base-font-size-h5/1.5);
+
+  @include bp(medium) {
+    font-size: _em($_base-font-size-h5);
+  }
 }
 
 h6 {
-  font-size: _rem($_base-font-size-h6);
+  font-size: _em($_base-font-size-h6/1.5);
+
+  @include bp(medium) {
+    font-size: _em($_base-font-size-h6);
+  }
 }
 
 
 // Block elements
 // ==========================================================================
 
+p {
+  font-size: _rem(($_base-font-size)-3);
+
+  @include bp(medium) {
+    font-size: _rem(($_base-font-size)-2);
+  }
+
+  @include bp(large) {
+    font-size: _rem($_base-font-size);
+  }
+}
+
 p,
 ul,
 ol,
 blockquote {
   margin-top: 0;
-  margin-bottom: _em($_base-font-space);
+  margin-bottom: _rem($_base-font-space);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 blockquote {
@@ -94,7 +138,7 @@ a {
 
   &:focus {
    color: $_base-font-links-color-focus;
-   outline: $_base-font-links-color-focus dotted _em(2px);
+   outline: none;
   }
 }
 

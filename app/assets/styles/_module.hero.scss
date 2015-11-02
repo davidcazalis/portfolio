@@ -3,17 +3,18 @@
 // ==========================================================================
 
 .m-hero {
-
+  position: relative;
+  z-index: 20;
+  
   &__title {
-    font-size: 0.5em;
+    font-size: .65em;
 
     @include bp(medium) {
-      font-size: .7em;
+      font-size: .8em;
     }
 
     @include bp(large) {
       font-size: 1em;
     }
   }
-
 }

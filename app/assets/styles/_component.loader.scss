@@ -1,0 +1,57 @@
+// ==========================================================================
+// LOADER
+// ==========================================================================
+
+$_loading-prefix: '.is-loading';
+$_show-prefix: '.is-show';
+
+// Overlay
+// ==========================================================================
+
+#{$_loading-prefix} {
+  position: relative;
+
+  &:before {
+    transition: all ease 1s;
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: $_color-black;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    z-index: 8000;
+    opacity: 1;
+  }
+
+  &#{$_show-prefix}:before {
+    opacity: 0;
+  }
+
+}
+
+// Logo
+// ==========================================================================
+
+#{$_loading-prefix} .c-logo {
+  color: $_color-brand;
+  z-index: 9000;
+  transition: all ease 1s;
+
+  .c-logo__circle {
+    stroke-dasharray: 40;
+    stroke-dashoffset: 1100;
+    animation: loading 4.5s linear infinite;
+  }
+}
+
+@keyframes loading {
+  from {
+    stroke-dashoffset: 1100;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}

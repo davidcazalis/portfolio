@@ -1,0 +1,51 @@
+// ==========================================================================
+// TWITTERFEED
+// ==========================================================================
+.c-twitterfeed {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li + li {
+    border-top: 1px solid $_color-grey-dark;
+    padding-top: _em($_layout-space);
+    margin-top: _em($_layout-space);
+  }
+
+  .user,
+  .timePosted {
+    vertical-align: middle;
+    font-size: _em(12px);
+    margin-bottom: _em($_layout-space/2);
+    margin-top: 0;
+
+    * {
+      color: $_color-grey-light;
+      display: inline-block;
+      vertical-align: middle;
+
+      & + * {
+        margin-left: _em(5px);
+      }
+    }
+
+    img {
+      width: _rem(24px);
+      height: _rem(24px);
+      border-radius: 100%;
+    }
+  }
+
+  .timePosted {
+    color: $_color-grey;
+    text-align: right;
+    margin-top: _em($_layout-space/2);
+  }
+
+  .tweet {
+    margin: 0;
+  }
+  
+}

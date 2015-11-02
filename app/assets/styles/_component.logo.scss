@@ -6,9 +6,25 @@
   display: inline-block;
   margin: 0;
   color: $_color-white;
+  font-size: $_base-font-size;
+  width: _em(48px);
+  height: _em(48px);
+  position: relative;
+  vertical-align: top;
+  transition: all ease .2s;
+  transform: translate(0, 0);
+  opacity: 1;
+
+  svg {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
+  }
 }
 
 .c-logo__link {
-  display: inline-block;
+  display: block;
   color: inherit;
 }

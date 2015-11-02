@@ -1,0 +1,45 @@
+// ==========================================================================
+// TESTIMONIAL
+// ==========================================================================
+
+.m-testimonial {
+
+  * {
+    outline: 0;
+  }
+
+  .slick-dots {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    @include clearfix();
+    text-align: center;
+    margin-top: 1em;
+
+    li {
+      display: inline-block;
+
+      & + li {
+        margin-left: .25em;
+      }
+
+      &.slick-active {
+        button {
+          background-color: $_color-brand;
+        }
+      }
+
+      button {
+        background-color: $_color-brand-dark;
+        width: _em(10px);
+        height: _em(10px);
+        padding: 0;
+        border-radius: 100%;
+        border: none;
+        overflow: hidden;
+        text-indent: -9999px;
+        display: block;
+      }
+    }
+  }
+}

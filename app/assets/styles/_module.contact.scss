@@ -1,0 +1,20 @@
+// ==========================================================================
+// CONTACT
+// ==========================================================================
+
+.m-contact {
+  background-color: rgba($_color-black, .75);
+
+  padding-top: _em($_layout-space);
+  padding-bottom: _em($_layout-space);
+
+  @include bp(medium) {
+    padding-top: _em($_layout-space*2);
+    padding-bottom: _em($_layout-space*2);
+  }
+}
+
+.m-contact__icon {
+  color: $_color-brand;
+  font-size: 2em;
+}

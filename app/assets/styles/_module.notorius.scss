@@ -1,0 +1,19 @@
+// ==========================================================================
+// NOTORIUS
+// ==========================================================================
+
+.m-notorius-wrapper {
+  background-image: url('../media/background-notorius.jpg');
+  background-size: cover;
+  background-position: 50% 0%;
+
+  @include bp(medium) {
+    padding-top: _em($_layout-space);
+  }
+}
+
+.m-notorius__content {
+  max-width: _em(580px);
+  margin-left: auto;
+  margin-right: auto;
+}

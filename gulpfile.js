@@ -48,6 +48,7 @@ function clean(path, files) {
 // Create SVG sprites
 gulp.task('svg-sprite', function() {
   return gulp.src(['*.svg', '!sprite.svg'], {cwd: config.media.src})
+    .pipe(!options.production ? plumber() : gutil.noop())
     .pipe(svgSprite({
       mode: {
         symbol: {
@@ -57,12 +58,14 @@ gulp.task('svg-sprite', function() {
         }
       }
     }))
-    .pipe(gulp.dest(config.media.src));
+    .pipe(gulp.dest(config.media.src))
+    .pipe(!options.production ? browserSync.stream() : gutil.noop());
 });
 
 // Images optimisation
 gulp.task('media', function() {
   return gulp.src(config.media.src+'/**/*')
+    .pipe(!options.production ? plumber() : gutil.noop())
     .pipe(gulpif(options.production, imagemin({
       progressive: true,
       svgoPlugins: [{
@@ -70,12 +73,14 @@ gulp.task('media', function() {
       }],
       use: [pngquant()]
     })))
-    .pipe(gulpif(options.production, gulp.dest(config.media.dest)));
+    .pipe(gulpif(options.production, gulp.dest(config.media.dest)))
+    .pipe(!options.production ? browserSync.stream() : gutil.noop());
 });
 
 // Create fonts from SVG icons
 gulp.task('iconfont', function() {
   return gulp.src([config.icons.src])
+    .pipe(!options.production ? plumber() : gutil.noop())
     .pipe(iconfont({
       fontName: config.icons.font.name,
       formats: ['ttf', 'eot', 'woff', 'svg']

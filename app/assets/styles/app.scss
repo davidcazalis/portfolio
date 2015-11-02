@@ -4,7 +4,7 @@
 
 // Libs
 // ==========================================================================
-// @import '../../libs/normalize-css/normalize';
+@import '../../libs/slick-carousel/slick/slick';
 
 // Variables
 // ==========================================================================
@@ -39,13 +39,28 @@
 // ==========================================================================
 @import 'object.island';
 @import 'object.grid';
+@import 'object.section';
 
 // Components
 // ==========================================================================
+@import 'component.loader';
 @import 'component.iconfont';
 @import 'component.typography';
 @import 'component.logo';
+@import 'component.buttons';
+@import 'component.navigation';
+@import 'component.project';
+@import 'component.instafeed';
+@import 'component.twitterfeed';
+@import 'component.sidebar';
+@import 'component.testimonial';
 
 // Module
 // ==========================================================================
-@import 'module.hero'
+@import 'module.landing';
+@import 'module.header';
+@import 'module.hero';
+@import 'module.about';
+@import 'module.notorius';
+@import 'module.contact';
+@import 'module.footer';

@@ -1,0 +1,362 @@
+// ==========================================================================
+// Projects
+// ==========================================================================
+
+.c-project {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  font-size: _rem(16px);
+  margin-bottom: _em($_layout-space);
+
+  @include bp(medium) {
+    font-size: _em($_base-font-size);
+  }
+
+  @media only screen and (orientation: landscape) {
+    max-height: 60vh;
+  }
+
+  img {
+    display: block;
+  }
+}
+
+.c-project__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  transition: all ease .2s;
+
+  svg {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  &__rect {
+    stroke-width: 8px;
+    stroke: $_color-brand;
+  }
+}
+
+.c-project__figure {
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    background-color: rgba($_color-black,.9);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    @include bp(small) {
+      background-color: rgba($_color-black,.8);
+    }
+  }
+
+  &__bg {
+    width: 100%;
+    position: relative;
+
+    @include bp(small) {
+      filter: blur(0);
+    }
+  }
+
+  &__logo,
+  &__agency {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 20;
+    width: 50%;
+    max-width: _em(180px);
+    color: $_color-white;
+  }
+
+  &__logo {
+    width: 30%;
+    max-width: _em(150px);
+    top: 25%;
+    transform: translate(0,-25%);
+
+    @include bp(small) {
+      width: 50%;
+      max-width: _em(180px);
+      color: $_color-white;
+      top: 50%;
+      transform: translate(0,-50%);
+    }
+  }
+
+  &__agency {
+    opacity: 0;
+  }
+}
+
+.c-project__body {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+  color: $_color-grey-light;
+  position: relative;
+
+  @include bp(small) {
+    color: $_color-brand-dark;
+    position: absolute;
+  }
+
+  &__infos,
+  &__link {
+    opacity: 1;
+    padding: _em($_layout-space);
+    position: relative;
+
+    @include bp(small) {
+      position: absolute;
+    }
+  }
+
+  &__infos {
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $_color-black;
+    color: $_color-grey-light;
+
+    @include bp(small) {
+      background-color: transparent;
+      color: inherit;
+      transform: translateX(-100%);
+    }
+
+    &__item + .c-project__body__infos {
+      padding-left: _em($_layout-space);
+    }
+
+    &__item:last-child {
+
+      @include bp(large) {
+        color: $_color-white;
+      }
+    }
+  }
+
+  &__link {
+    top: 0;
+    right: 0;
+    text-align: center;
+    background-color: transparent;
+    color: $_color-brand;
+    padding-top: 0;
+    font-size: _rem(18px);
+    position: absolute;
+    top: -70%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+
+    @include bp(small) {
+      transform: translateX(100%);
+      padding-top: _em($_layout-space);
+      background-color: transparent;
+      text-align: right;
+      position: relative;
+      top: 0;
+      margin-left: 0;
+      margin-right: 0;
+      left: 0;
+    }
+
+    a {
+      color: $_color-brand;
+
+      @include bp(small) {
+        color: $_color-white;
+      }
+
+      @include bp(large) {
+        color: $_color-brand-dark;
+      }
+
+      &:after {
+        transition: all ease .2s;
+      }
+
+      &:hover,
+      &:focus {
+        color: $_color-white;
+
+        @include bp(large) {
+          color: $_color-brand-dark;
+        }
+
+        &:after {
+          font-size: 2em;
+          color: $_color-brand;
+
+          @include bp(large) {
+            color: $_color-white;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Animations
+// ==========================================================================
+
+.c-project {
+
+
+  &:hover,
+  &:focus,
+  &.is-active {
+
+    @include bp(small) {
+      max-height: inherit;
+    }
+
+    @media only screen and (orientation: landscape) {
+      max-height: 60vh;
+    }
+
+    @include bp(medium) {
+      max-height: none;
+    }
+
+    .c-project__overlay {
+
+      @include bp(small) {
+        transition: all ease .5s 1s;
+        opacity: .7;
+      }
+
+      @include bp(large) {
+        transform: skewX(71deg);
+        opacity: 1;
+      }
+    }
+
+    .c-project__figure {
+
+      &__bg {
+        @include bp(small) {
+          filter: grayscale(1) blur(5px);;
+        }
+      }
+
+      &:after {
+        transition: all ease .5s .5s;
+
+        @include bp(large) {
+          background-color: $_color-brand;
+        }
+      }
+    }
+
+    @include bp(small) {
+      .c-project__overlay__rect  {
+        opacity: 1;
+        animation: hoverproject 1.5s forwards;
+      }
+    }
+
+    .c-project__figure__logo,
+    .c-project__figure__agency {
+
+      @include bp(small) {
+        transition: all cubic-bezier(0.45, 0.48, 0, 1.18) .5s .5s;
+        color: $_color-grey-light;
+      }
+
+      @include bp(large) {
+        color: $_color-brand;
+      }
+    }
+
+    .c-project__figure__logo {
+
+      @include bp(small) {
+        width: 25%;
+        max-width: _em(150px);
+        top: 25%;
+        transform: translate(0,-25%);
+        top: 50%;
+        transform: translate(0,-50%);
+      }
+
+      @include bp(large) {
+        top: 50%;
+        width: 20%;
+        transform: translate(0,-50%);
+      }
+    }
+
+    .c-project__figure__agency {
+      @include bp(small) {
+        color: $_color-white;
+        width: 20%;
+        transform: translate(60%, -50%);
+        opacity: 1;
+      }
+    }
+
+    .c-project__body {
+
+
+      @include bp(small) {
+        color: $_color-white;
+        position: absolute;
+      }
+
+      @include bp(large) {
+        color: $_color-brand-dark;
+      }
+    }
+
+    .c-project__body__infos {
+      transform: translateX(0);
+      transition: all ease .5s 1s;
+
+      @include bp(large) {
+        background-color: transparent;
+      }
+    }
+
+    .c-project__body__link {
+      transform: translateX(0);
+      transition: all ease .5s 1s;
+    }
+  }
+}
+
+@keyframes hoverproject {
+  0% {
+    stroke-dashoffset: 4000;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    fill: $_color-grey-dark;
+    stroke: $_color-grey-dark;
+  }
+}

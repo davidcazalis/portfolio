@@ -29,20 +29,23 @@
 }
 
 $icons: (
-  error: "\EA01",
-  facebook: "\EA02",
-  github: "\EA03",
-  googleplus: "\EA04",
-  info: "\EA05",
-  instagram: "\EA06",
-  linkedin: "\EA07",
-  pinterest: "\EA08",
-  sharethis: "\EA09",
-  skype: "\EA0A",
-  tumblr: "\EA0B",
-  twitter: "\EA0C",
-  vimeo: "\EA0D",
-  youtube: "\EA0E"
+  behance: "\EA01",
+  error: "\EA02",
+  external: "\EA03",
+  facebook: "\EA04",
+  github: "\EA05",
+  googleplus: "\EA06",
+  info: "\EA07",
+  instagram: "\EA08",
+  linkedin: "\EA09",
+  mail: "\EA0A",
+  pinterest: "\EA0B",
+  sharethis: "\EA0C",
+  skype: "\EA0D",
+  tumblr: "\EA0E",
+  twitter: "\EA0F",
+  vimeo: "\EA10",
+  youtube: "\EA11"
 );
 
 [class*="icon--"]:before {

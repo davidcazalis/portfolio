@@ -1,0 +1,21 @@
+// ==========================================================================
+// LANDING
+// ==========================================================================
+
+.m-landing {
+  background-image: url('../media/background-landing.jpg');
+  background-size: cover;
+  background-position: 50%;
+  position: relative;
+
+  &:after {
+    z-index: 0;
+    content: "";
+    width: 100%;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    background: linear-gradient(to bottom, rgba($_color-black,0) 0%,rgba($_color-black, 1) 100%);
+  }
+}

@@ -1,0 +1,20 @@
+// ==========================================================================
+// SIDEBAR
+// ==========================================================================
+
+.c-social-sidebar {
+  padding-top: _em($_layout-space*1.5);
+  padding-right: _em($_layout-space*1.5);
+  padding-left: _em($_layout-space*1.5);
+  padding-bottom: _em($_layout-space*2);
+  background-color: rgba($_color-black, .9);
+
+  .c-social-sidebar__head {
+    margin-top: _em($_layout-space);
+
+    i {
+      margin-right: _em(10px);
+      font-size: _em(20px);
+    }
+  }
+}

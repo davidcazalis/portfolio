@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Rokkitt&amp;text=“”" rel="stylesheet" type="text/css">
     <link href="../assets/styles/app.css" media="screen" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <div id="main-wrapper" class="u-wrapper">
-      <header role="banner" id="header" class="c-header">
-        <div class="c-header__logo">
-          <h1 class="c-logo"><a href="#" class="c-logo__link"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48" xml:space="preserve" class="c-logo--svg">
+    <div id="main-wrapper" class="is-loading u-wrapper">
+      <div class="m-landing">
+        <header role="banner" id="header" class="m-header">
+          <div class="m-header__logo">
+            <h1 class="c-logo"><a href="#" id="main-logo" class="c-logo__link"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48" xml:space="preserve" class="c-logo--svg">
   <title>David Cazalis</title>
   <g class="c-logo__dc">
   	<path fill="currentColor" class="c-logo__path" d="M33,31.6c-4,0-7.3-3.3-7.3-7.3c0-5.5-4.5-10-10-10c-0.7,0-1.4,0.6-1.4,1.4s0.6,1.4,1.4,1.4
@@ -22,30 +24,229 @@
   	<path fill="currentColor" class="c-logo__path" d="M33,14.3c-3.4,0-4.8,1-6.6,2.5c-0.6,0.5-0.6,1.3-0.2,1.9c0.3,0.3,0.6,0.5,1,0.5
   		c0.3,0,0.6-0.1,0.9-0.3c1.5-1.3,2.3-1.9,4.9-1.9c0.7,0,1.4-0.6,1.4-1.4S33.7,14.3,33,14.3z"/>
   </g>
-  <circle class="c-logo__circle c-logo__path" cx="24" cy="24" r="22.5" stroke="currentColor" stroke-width="3" fill="none" />
+  <circle class="c-logo__circle c-logo__path" cx="24" cy="24" r="22.5" stroke="currentColor" stroke-width="2" fill="none" />
 </svg>
 </a></h1>
-        </div>
-        <div class="c-header__nav">
-          <nav role="navigation" id="navigation" class="c-navigation">
-            <ul class="c-navigation__list">
-              <li class="c-navigation__list__item"><a href="#work">Work</a></li>
-              <li class="c-navigation__list__item"><a href="#about">About</a></li>
-              <li class="c-navigation__list__item"><a href="#contact">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
-      </header>
-      <section id="hero" class="o-section m-hero">
-        <div class="o-row u-align--center">
-          <div class="m-hero__title o-island--vert o-column medium-10 medium-offset-1"><span class="typo-hero">David Cazalis</span>
-            <h2 class="typo-hero--body">Développeur front-end et webdesigner, à Clermont-Ferrand en France.</h2>
           </div>
-          <div class="m-hero__cta o-island--vert o-column"><a href="mailto:davidcazalis@gmail.com" class="c-btn">Me contacter</a></div>
+          <div class="m-header__nav">
+            <nav role="navigation" id="navigation" class="c-navigation">
+              <ul class="c-navigation__list">
+                <li class="c-navigation__list__item"><a href="#work">Work</a></li>
+                <li class="c-navigation__list__item"><a href="#about">About</a></li>
+                <li class="c-navigation__list__item"><a href="#contact">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <section id="hero" class="m-hero o-section--align-vert">
+          <div class="o-row u-align--center">
+            <div class="m-hero__title o-island--vert o-column medium-10 medium-offset-1"><span class="typo-hero">David Cazalis</span>
+              <h2 class="typo-hero--body">Développeur front-end et webdesigner, à Clermont-Ferrand en France.</h2>
+            </div>
+            <div class="m-hero__cta o-island--vert o-column"><a href="mailto:davidcazalis@gmail.com" class="c-btn">Me contacter</a><a href="#" class="c-btn--secondary">En savoir plus</a></div>
+          </div>
+        </section>
+      </div>
+      <section class="m-portfolio o-section">
+        <header class="o-row u-align--center o-section__head">
+          <h2>Projets</h2>
+          <p class="typo-lead">Une petite selection des quelques projets sur lesquels j'ai collaboré.</p>
+        </header>
+        <div class="o-row">
+          <div class="o-column large-6">
+            <div class="c-project js-project">
+              <div class="c-project__overlay">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="580px" height="310px" viewBox="0 0 580 310" xml:space="preserve" preserveAspectRatio="none">
+                  <title>Monbento</title>
+                  <rect width="580" height="310" fill="transparent" stroke="currentColor" stroke-width=".35em" stroke-dasharray="4000" stroke-dashoffset="4000" class="c-project__overlay__rect"></rect>
+                </svg>
+              </div>
+              <div class="c-project__figure">
+                <div class="c-project__figure__logo">
+                  <div class="u-svg-wrapper">
+                    <svg fill="currentColor">
+                      <use xlink:href="../assets/media/sprite.svg#project-logo-monbento"></use>
+                    </svg>
+                  </div>
+                </div><img src="../assets/media/project-bg-monbento.jpg" alt="" class="c-project__figure__bg">
+              </div>
+              <div class="c-project__body">
+                <div class="c-project__body__infos">
+                  <div class="c-project__body__infos__item"><span class="typo-project-label">Projet porté par</span><a href="http://www.debussac.net/" target="_blank" class="typo-project-info">De Bussac Multimédia</a></div>
+                  <div class="c-project__body__infos__item"><span class="typo-project-label">Mon rôle</span><span class="typo-project-info">Front-end</span></div>
+                </div>
+                <div class="c-project__body__link"><a href="http://www.monbento.com/appli/" target="_blank" class="typo-project-link">Voir le site</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="o-column large-6">
+            <div class="c-project js-project">
+              <div class="c-project__overlay">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="580px" height="310px" viewBox="0 0 580 310" xml:space="preserve" preserveAspectRatio="none">
+                  <title>Les amis du domaine royale de Randan</title>
+                  <rect width="580" height="310" fill="transparent" stroke="currentColor" stroke-width=".35em" stroke-dasharray="4000" stroke-dashoffset="4000" class="c-project__overlay__rect"></rect>
+                </svg>
+              </div>
+              <div class="c-project__figure">
+                <div class="c-project__figure__logo">
+                  <div class="u-svg-wrapper">
+                    <svg fill="currentColor">
+                      <use xlink:href="../assets/media/sprite.svg#project-logo-randan"></use>
+                    </svg>
+                  </div>
+                </div><img src="../assets/media/project-bg-randan.jpg" alt="" class="c-project__figure__bg">
+              </div>
+              <div class="c-project__body">
+                <div class="c-project__body__infos">
+                  <div class="c-project__body__infos__item"><span class="typo-project-label">Projet porté par</span><a href="http://notorius-studio.com/" target="_blank" class="typo-project-info">Notorius Studio</a></div>
+                  <div class="c-project__body__infos__item"><span class="typo-project-label">Mon rôle</span><span class="typo-project-info">Front-end</span></div>
+                </div>
+                <div class="c-project__body__link"><a href="http://amisdomainerandan.org/" target="_blank" class="typo-project-link">Voir le site</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="o-column large-6">
+            <div class="c-project js-project">
+              <div class="c-project__overlay">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="580px" height="310px" viewBox="0 0 580 310" xml:space="preserve" preserveAspectRatio="none">
+                  <title>Euromaster</title>
+                  <rect width="580" height="310" fill="transparent" stroke="currentColor" stroke-width=".35em" stroke-dasharray="4000" stroke-dashoffset="4000" class="c-project__overlay__rect"></rect>
+                </svg>
+              </div>
+              <div class="c-project__figure">
+                <div class="c-project__figure__logo">
+                  <div class="u-svg-wrapper">
+                    <svg fill="currentColor">
+                      <use xlink:href="../assets/media/sprite.svg#project-logo-euromaster"></use>
+                    </svg>
+                  </div>
+                </div><img src="../assets/media/project-bg-euromaster.jpg" alt="" class="c-project__figure__bg">
+              </div>
+              <div class="c-project__body">
+                <div class="c-project__body__infos">
+                  <div class="c-project__body__infos__item"><span class="typo-project-label">Projet porté par</span><a href="http://periscope.digital/" target="_blank" class="typo-project-info">Periscope Creations</a></div>
+                  <div class="c-project__body__infos__item"><span class="typo-project-label">Mon rôle</span><span class="typo-project-info">Front-end</span></div>
+                </div>
+                <div class="c-project__body__link"><a href="http://www.euromastergroup.com/" target="_blank" class="typo-project-link">Voir le site</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="o-column large-6">
+            <div class="c-project js-project">
+              <div class="c-project__overlay">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="580px" height="310px" viewBox="0 0 580 310" xml:space="preserve" preserveAspectRatio="none">
+                  <title>Fidroit</title>
+                  <rect width="580" height="310" fill="transparent" stroke="currentColor" stroke-width=".35em" stroke-dasharray="4000" stroke-dashoffset="4000" class="c-project__overlay__rect"></rect>
+                </svg>
+              </div>
+              <div class="c-project__figure">
+                <div class="c-project__figure__logo">
+                  <div class="u-svg-wrapper">
+                    <svg fill="currentColor">
+                      <use xlink:href="../assets/media/sprite.svg#project-logo-fidroit"></use>
+                    </svg>
+                  </div>
+                </div><img src="../assets/media/project-bg-fidroit.jpg" alt="" class="c-project__figure__bg">
+              </div>
+              <div class="c-project__body">
+                <div class="c-project__body__infos">
+                  <div class="c-project__body__infos__item"><span class="typo-project-label">Projet porté par</span><a href="http://1989.agency/" target="_blank" class="typo-project-info">Agence 1989</a></div>
+                  <div class="c-project__body__infos__item"><span class="typo-project-label">Mon rôle</span><span class="typo-project-info">Front-end</span></div>
+                </div>
+                <div class="c-project__body__link"><a href="http://fidroit.fr/" target="_blank" class="typo-project-link">Voir le site</a></div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+      <section class="m-about o-section o-section--align-vert">
+        <div class="o-row">
+          <div class="o-column large-6 m-about__column">
+            <header class="o-section__head">
+              <h2>À propos</h2>
+            </header>
+            <p class="typo-lead">Développeur front-end créatif. Ou quelque chose comme ça ...</p>
+            <p> David est un développeur front-end et un graphiste freelance. Comme tout les gens de sa profession il est passionné par son métier et parle de lui à la troisième personne.</p>
+            <p>Il c'est promis de ne pas parler d'<em>UX</em> et d'<em>UI</em> et de ne pas faire l'étalage des outils et techniques qu'il utilise, mais vous invite plutôt à vous faire votre propre idée sur le sujet à travers son travail.</p>
+            <div class="o-island--vert u-align--center"><a href="#" class="c-btn">Me contacter par mail</a></div>
+          </div>
+          <div class="o-column large-5 m-about__column">
+            <div class="c-social-sidebar">
+              <div class="c-social-sidebar__head">
+                <h3><i class="icon--twitter"></i>Twitter</h3>
+              </div>
+              <div id="twitterfeed" class="c-twitterfeed c-social-sidebar__item"></div>
+              <div class="c-social-sidebar__head">
+                <h3><i class="icon--instagram"></i>Instagram</h3>
+              </div>
+              <ul id="instafeed" class="c-instafeed c-social-sidebar__item"></ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="m-testimonial o-section">
+        <div class="o-row">
+          <div class="o-column medium-10 medium-offset-1">
+            <div class="o-section__head u-align--center">
+              <h2>Testimonial</h2>
+            </div>
+            <div id="testimonial" class="m-testimonial"></div>
+            <blockquote class="typo-quote">
+              <p>David apporte beaucoup à notre équipe. Il est curieux, compétent et doté d'une très bonne culture web. Travailler avec lui est un réel plaisir, et une véritable valeur ajoutée pour nos projets.</p>
+              <footer><a href="http://www.julienfauveau.com/" target="_blank"><img src="https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAJ7AAAAJDU5ODMzM2UyLWE3YTMtNGQ1Ni05N2RhLWEwNTczODUxN2MzMA.jpg" alt="Julien Fauveau" class="typo-quote__avatar">
+                  <cite>Julien Fauveau</cite></a></footer>
+            </blockquote>
+          </div>
+        </div>
+      </section>
+      <div class="m-notorius-wrapper">
+        <section class="m-notorius o-section">
+          <div class="o-row">
+            <div class="o-section__head u-align--center">
+              <h2>Notorius Studio</h2>
+            </div>
+            <div class="o-column large-12">
+              <div class="m-notorius__content">
+                <p>Je collabore régulièrement avec <a href="http://www.julienfauveau.com" target="_blank">Julien Fauveau</a>, un webdesigner et illustrateur avec qui je partage la même exigence et conception du métier.</p>
+                <p>À nous deux nous formons <a href="http://www.notorius-studio.com" target="_blank">Notorius Studio</a> : une petite équipe flexible et très fiable, idéale pour les agences ou les petites structures souhaitant externaliser leur conception graphique digitale.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="m-contact">
+          <div class="o-row">
+            <div class="o-column large-12 u-align--center">
+              <div class="m-contact__icon"><i class="icon--mail"></i></div>
+              <p class="o-island--vert"><span class="typo-lead">N'hésitez pas à m'écrire.</span><span class="typo-lead">Je serais ravis de parler de votre projet avec vous.</span></p><a href="#" class="c-btn">Me contacter</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <footer class="m-footer o-island--vert">
+        <div class="o-row">
+          <div class="m-footer__copyright">
+            <div class="m-footer__copyright__logo">
+              <div class="u-svg-wrapper">
+                <svg>
+                  <use xlink:href="../assets/media/sprite.svg#dc-logo"></use>
+                </svg>
+              </div>
+            </div>
+            <div class="m-footer__copyright__body"><span>© David Cazalis - 2016</span></div>
+          </div>
+          <div class="m-footer__links">
+            <ul>
+              <li><a href="#">Mentions légales</a></li>
+              <li><a href="#" class="icon--github">GitHub</a></li>
+              <li><a href="" class="icon--behance">Behance</a></li>
+              <li><a href="" class="icon--twitter">Twitter</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
     </div>
     <script src="../scripts/vendor.js"></script>
     <script src="../scripts/app.js"></script>
   </body>
 </html>
+<!-- Coucou copain. Tu peux récupérer les sources de ce projet sur https://github.com/davidcazalis/portfolio si tu es vraiment curieux.-->

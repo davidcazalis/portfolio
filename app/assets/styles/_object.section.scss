@@ -1,0 +1,61 @@
+// ==========================================================================
+// Section
+// ==========================================================================
+
+.o-section {
+  padding-top: _em($_layout-space);
+  padding-bottom: _em($_layout-space);
+
+  @include bp(medium) {
+    padding-top: _em($_layout-space*2);
+    padding-bottom: _em($_layout-space*2);
+  }
+
+  &:nth-child(even),
+  .m-landing + & {
+    background-color: $_color-white;
+    color: $_color-black;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      color: inherit;
+    }
+  }
+}
+
+.o-section__head {
+  padding-bottom: _em($_layout-space);
+  text-align: center;
+
+  @include bp(medium) {
+    padding-bottom: _em($_layout-space*2);
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.o-section--align-vert {
+  min-height: 45vh;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  flex-flow: row;
+  flex-wrap: wrap;
+  padding-top: _em($_layout-space);
+  padding-bottom: _em($_layout-space);
+
+  @include bp(medium) {
+    min-height: 55vh;
+  }
+
+  @include bp(large) {
+    min-height: 85vh;
+  }
+}

@@ -4,7 +4,7 @@
 
 // Color swatch
 $_color-brand: #41CCA5;
-$_color-brand-dark: #234038;
+$_color-brand-dark: darken($_color-brand, 37%);
 
 $_color-white: #DFE5EB;
 $_color-grey-light: #9BA7B3;
@@ -16,7 +16,7 @@ $_color-black: #16181A;
 // ==========================================================================
 
 // Typography
-$_base-font-size: 16px !default;
+$_base-font-size: 18px !default;
 $_base-font-line-height: 1.5 !default;
 $_base-font-space: $_base-font-size * $_base-font-line-height !default;
 $_base-font-family: 'Lato', sans-serif !default;
@@ -40,6 +40,10 @@ $_base-tables-padding: $_base-font-space !default;
 $_base-tables-border-width: 1px;
 $_base-tables-border-color: $_color-grey-light;
 
+// UI
+// ==========================================================================
+$_ui-border-width: 3px;
+
 // Layout
 // ==========================================================================
 
@@ -47,9 +51,9 @@ $_layout-space: $_base-font-space !default;
 
 // Breakpoints
 $_layout-breakpoints: (
-  small: 40em,
-  medium: 64em,
-  large: 75em
+  small: 30em,
+  medium: 48em,
+  large: 60em
 ) !default;
 
 // Grid

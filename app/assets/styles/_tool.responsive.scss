@@ -3,8 +3,16 @@
 // ==========================================================================
 
 .u-wrapper {
+  width: 100%;
   @include clearfix();
   position: relative;
   overflow-x: hidden;
   min-height: 100vh;
+  border: 0;
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
 }

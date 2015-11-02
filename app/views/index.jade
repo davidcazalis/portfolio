@@ -2,23 +2,146 @@ extends partial/_base
 
 append main
 
-  block header
-    header.c-header(role="banner" id="header")
-      div.c-header__logo
-        h1.c-logo: a.c-logo__link(href="#")
-            include ../assets/media/dc-logo.svg
-      div.c-header__nav
-        nav.c-navigation(role="navigation" id="navigation")
-          ul.c-navigation__list
-            each section in navSection
-              li.c-navigation__list__item: a(href="##{section.toLowerCase()}") #{section}
-        
   block landing
-    section.o-section.m-hero(id="hero")
-      .o-row.u-align--center
-        .m-hero__title.o-island--vert.o-column.medium-10.medium-offset-1
-          span.typo-hero David Cazalis
-          h2.typo-hero--body Développeur front-end et webdesigner, à Clermont-Ferrand en France.
-        .m-hero__cta.o-island--vert.o-column
-          a.c-btn(href="mailto:davidcazalis@gmail.com") Me contacter
-        
+    .m-landing
+      block header
+        header.m-header(role="banner" id="header")
+          div.m-header__logo
+            h1.c-logo: a.c-logo__link(href="#" id="main-logo")
+                include ../assets/media/dc-logo.svg
+          div.m-header__nav
+            nav.c-navigation(role="navigation" id="navigation")
+              ul.c-navigation__list
+                each section in navSection
+                  li.c-navigation__list__item: a(href="##{section.toLowerCase()}") #{section}
+            
+      block hero
+        section.m-hero.o-section--align-vert(id="hero")
+          .o-row.u-align--center
+            .m-hero__title.o-island--vert.o-column.medium-10.medium-offset-1
+              span.typo-hero David Cazalis
+              h2.typo-hero--body Développeur front-end et webdesigner, à Clermont-Ferrand en France.
+            .m-hero__cta.o-island--vert.o-column
+              a.c-btn(href="mailto:davidcazalis@gmail.com") Me contacter
+              a.c-btn--secondary(href="#") En savoir plus
+  
+  block portfolio
+    - var projects = ['Monbento', 'Les amis du domaine royale de Randan', 'Euromaster', 'Fidroit']
+    - var projectsUrl = ['http://www.monbento.com/appli/', 'http://amisdomainerandan.org/', 'http://www.euromastergroup.com/', 'http://fidroit.fr/']
+    - var projectsFiles = ['monbento', 'randan', 'euromaster', 'fidroit']
+    - var projectsAgencies = ['De Bussac Multimédia', 'Notorius Studio', 'Periscope Creations', 'Agence 1989']
+    - var projectsAgenciesUrl = ['http://www.debussac.net/', 'http://notorius-studio.com/', 'http://periscope.digital/', 'http://1989.agency/']
+    - var projectsRoles = ['Front-end', 'Front-end', 'Front-end', 'Front-end']
+    
+    section.m-portfolio.o-section
+      header.o-row.u-align--center.o-section__head
+        h2 Projets
+        p.typo-lead Une petite selection des quelques projets sur lesquels j'ai collaboré.
+      .o-row
+        each project, index in projects
+          .o-column.large-6
+            .c-project.js-project
+              .c-project__overlay
+                svg(xmlns="http://www.w3.org/2000/svg" version="1.1" width="580px" height="310px" viewBox="0 0 580 310" xml:space="preserve" preserveAspectRatio="none")
+                  title #{project}
+                  rect.c-project__overlay__rect(width="580" height="310" fill="transparent" stroke="currentColor" stroke-width=".35em" stroke-dasharray="4000" stroke-dashoffset="4000")
+              .c-project__figure
+                div.c-project__figure__logo
+                  .u-svg-wrapper
+                    svg(fill="currentColor")
+                      use(xlink:href="#{mediaPath}/sprite.svg#project-logo-#{projectsFiles[index]}")
+                img.c-project__figure__bg(src="#{mediaPath}/project-bg-#{projectsFiles[index]}.jpg" alt="")
+              .c-project__body
+                .c-project__body__infos
+                  .c-project__body__infos__item
+                    span.typo-project-label Projet porté par
+                    a.typo-project-info(href="#{projectsAgenciesUrl[index]}" target="_blank") #{projectsAgencies[index]}
+                  .c-project__body__infos__item
+                    span.typo-project-label Mon rôle
+                    span.typo-project-info Front-end
+                .c-project__body__link
+                  a(href="#{projectsUrl[index]}" target="_blank").typo-project-link Voir le site
+  
+  block about
+    section.m-about.o-section.o-section--align-vert
+      .o-row
+        .o-column.large-6.m-about__column
+          header.o-section__head
+            h2 À propos
+          p.typo-lead Développeur front-end créatif. Ou quelque chose comme ça ...
+          p  David est un développeur front-end et un graphiste freelance. Comme tout les gens de sa profession il est passionné par son métier et parle de lui à la troisième personne.
+          p Il c'est promis de ne pas parler d'<em>UX</em> et d'<em>UI</em> et de ne pas faire l'étalage des outils et techniques qu'il utilise, mais vous invite plutôt à vous faire votre propre idée sur le sujet à travers son travail.
+          .o-island--vert.u-align--center
+            a.c-btn(href="#") Me contacter par mail
+          
+        .o-column.large-5.m-about__column
+          .c-social-sidebar
+            .c-social-sidebar__head
+              h3
+                i.icon--twitter
+                | Twitter
+            .c-twitterfeed.c-social-sidebar__item(id="twitterfeed")
+            .c-social-sidebar__head
+              h3
+                i.icon--instagram
+                | Instagram
+            ul.c-instafeed.c-social-sidebar__item(id="instafeed")
+  
+  block testimonial
+    section.m-testimonial.o-section
+      .o-row
+        .o-column.medium-10.medium-offset-1
+          .o-section__head.u-align--center
+            h2 Testimonial
+          .m-testimonial(id="testimonial")
+          
+          - var quotes = ["David apporte beaucoup à notre équipe. Il est curieux, compétent et doté d'une très bonne culture web. Travailler avec lui est un réel plaisir, et une véritable valeur ajoutée pour nos projets."]
+          - var quotesAvatar = ['https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAJ7AAAAJDU5ODMzM2UyLWE3YTMtNGQ1Ni05N2RhLWEwNTczODUxN2MzMA.jpg']
+          - var quotesAuthor = ['Julien Fauveau']
+          - var quotesAuthorUrl = ['http://www.julienfauveau.com/']
+          
+          each quote, index in quotes
+            blockquote.typo-quote
+              p #{quote}
+              footer
+                a(href="#{quotesAuthorUrl[index]}" target="_blank")
+                  img.typo-quote__avatar(src="#{quotesAvatar[index]}", alt="#{quotesAuthor[index]}")
+                  cite #{quotesAuthor[index]}
+  
+  block notorius
+    .m-notorius-wrapper
+      section.m-notorius.o-section
+        .o-row
+          .o-section__head.u-align--center
+            h2 Notorius Studio
+          .o-column.large-12
+            .m-notorius__content
+              p Je collabore régulièrement avec <a href="http://www.julienfauveau.com" target="_blank">Julien Fauveau</a>, un webdesigner et illustrateur avec qui je partage la même exigence et conception du métier.
+              p À nous deux nous formons <a href="http://www.notorius-studio.com" target="_blank">Notorius Studio</a> : une petite équipe flexible et très fiable, idéale pour les agences ou les petites structures souhaitant externaliser leur conception graphique digitale.
+      div.m-contact
+        .o-row
+          .o-column.large-12.u-align--center
+            div.m-contact__icon
+              i.icon--mail
+            p.o-island--vert
+              span.typo-lead N'hésitez pas à m'écrire.
+              span.typo-lead Je serais ravis de parler de votre projet avec vous.
+            a.c-btn(href="#") Me contacter
+
+  block footer
+    footer.m-footer.o-island--vert
+      .o-row
+        .m-footer__copyright
+          .m-footer__copyright__logo
+            .u-svg-wrapper
+              svg
+                use(xlink:href="#{mediaPath}/sprite.svg#dc-logo")
+          .m-footer__copyright__body
+            span © David Cazalis - 2016
+        .m-footer__links
+          ul
+            li: a(href="#") Mentions légales
+            li: a(href="#").icon--github GitHub
+            li: a(href="").icon--behance Behance
+            li: a(href="").icon--twitter Twitter
+    
