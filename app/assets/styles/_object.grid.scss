@@ -59,6 +59,7 @@ $_grid: $_layout-grid !default;
   @include clearfix();
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
   max-width: _rem(map-get($_grid, width));
 }
 

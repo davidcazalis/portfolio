@@ -35,7 +35,11 @@
   border-radius: 4em;
 
   & + & {
-    margin-left: $_base-font-space;
+    margin-top: _em($_base-font-space);
+
+    @include bp(small) {
+      margin-left: _em($_base-font-space);
+    }
   }
 }
 

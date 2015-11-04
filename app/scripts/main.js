@@ -13,7 +13,7 @@ var app;
           hidden = 'is-loading',
           show = 'is-show';
 
-      $(window).bind("load", function() {
+      $(window).load(function() {
         $(e).addClass(show);
         setTimeout(function(){
           $(e).removeClass(hidden, show);
@@ -73,13 +73,28 @@ var app;
 
     },
 
+    fixVH: function() {
+      var iOS = navigator.userAgent.match(/(iPod|iPhone|iPad)/);
+      var height = $(window).height();
+
+      function iosVhHeightBug() {
+        $("#object-to-set-height-on").css('min-height', height);
+      }
+
+      if(iOS){
+        iosVhHeightBug();
+        $(window).bind('resize', iosVhHeightBug);
+      }
+    },
+
     init: function() {
-      svg4everybody();
       app.loading();
+      svg4everybody();
       app.instagramfeed();
       app.twitterfeed();
       app.testimonial();
       app.scrollTo();
+      app.fixVH();
     }
   };
 

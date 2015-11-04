@@ -42,7 +42,6 @@
 }
 
 .o-section--align-vert {
-  min-height: 45vh;
   display: flex;
   align-items: center;
   align-content: center;
@@ -50,10 +49,7 @@
   flex-wrap: wrap;
   padding-top: _em($_layout-space);
   padding-bottom: _em($_layout-space);
-
-  @include bp(medium) {
-    min-height: 55vh;
-  }
+  max-height: 100%;
 
   @include bp(large) {
     min-height: 70vh;
