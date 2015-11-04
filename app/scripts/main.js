@@ -21,6 +21,15 @@ var app;
       });
     },
 
+    scrollTo: function() {
+      $('.js-scroll').click( function() {
+        var page = $(this).attr('href');
+        var speed = 750;
+        $('html, body').animate( { scrollTop: $(page).offset().top }, speed );
+        return false;
+      });
+    },
+
     instagramfeed: function() {
       var userFeed = new Instafeed({
           get: 'user',
@@ -65,10 +74,12 @@ var app;
     },
 
     init: function() {
+      svg4everybody();
       app.loading();
       app.instagramfeed();
       app.twitterfeed();
       app.testimonial();
+      app.scrollTo();
     }
   };
 

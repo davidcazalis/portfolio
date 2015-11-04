@@ -29,7 +29,7 @@
       "!app/views/**/_*.jade"
     ],
     "dest" : "app/views",
-    "build" : "build/views"
+    "build" : "build/"
   },
   "scripts" : {
     "src" : [
@@ -45,7 +45,8 @@
       "app/libs/Snap.svg/dist/snap.svg-min.js",
       "app/libs/instafeed.js/instafeed.min.js",
       "app/libs/slick-carousel/slick/slick.min.js",
-      "app/scripts/twitterpostfetcher.js"
+      "app/scripts/twitterpostfetcher.js",
+      "app/libs/svg4everybody/dist/svg4everybody.min.js"
     ],
     "app" : [
       "app/scripts/main.js"

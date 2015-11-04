@@ -10,6 +10,7 @@ var config = require('./config.json');
 
 var browserSync = require('browser-sync').create(),
   del = require('del'),
+  _ = require('lodash'),
   pngquant = require('imagemin-pngquant'),
   consolidate = require('gulp-consolidate'),
   options = require("minimist")(process.argv.slice(2));
@@ -69,7 +70,8 @@ gulp.task('media', function() {
     .pipe(gulpif(options.production, imagemin({
       progressive: true,
       svgoPlugins: [{
-        removeViewBox: false
+        removeViewBox: false,
+        cleanupIDs: false
       }],
       use: [pngquant()]
     })))
@@ -132,14 +134,18 @@ gulp.task('styles', function() {
 
 // Compile Jade files into HTML
 gulp.task('templates', function() {
-  clean(config.templates.dest, 'html');
   return gulp.src(config.templates.src)
-    .pipe(data(function(file) {
-      return require('./config.json');
-    }))
+    .pipe(gulpif(!options.production, data(function(file) {
+      return config;
+    }), data(function(file) {
+      var json = config;
+      var env = { "prod" : true };
+      var data = _.assign({}, json, env);
+      return data;
+    })))
     .pipe(!options.production ? plumber() : gutil.noop())
     .pipe(jade({
-      pretty: true
+      pretty: true,
     }))
     .pipe(!options.production ? gulp.dest(config.templates.dest) : gulp.dest(config.templates.build))
     .pipe(!options.production ? browserSync.stream() : gutil.noop());
@@ -200,7 +206,7 @@ gulp.task('live', function() {
   gulp.watch(config.libs, ['scripts']);
   gulp.watch(config.scripts.src, ['scripts']);
   gulp.watch(config.icons.src, ['iconfont', 'styles']);
-  gulp.watch([config.media.src + '/*.svg', !config.media.src + '/sprite.svg'], ['svg-sprite', 'templates']);
+  gulp.watch([config.media.src + '/*.svg', '!'+config.media.src + '/sprite.svg'], ['svg-sprite', 'templates']);
   gulp.watch(config.templates.dest + '/*.html').on('change', browserSync.reload);
 });
 

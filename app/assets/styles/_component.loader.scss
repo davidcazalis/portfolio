@@ -36,8 +36,8 @@ $_show-prefix: '.is-show';
 
 #{$_loading-prefix} .c-logo {
   color: $_color-brand;
-  z-index: 9000;
   transition: all ease 1s;
+  z-index: 9000;
 
   .c-logo__circle {
     stroke-dasharray: 40;

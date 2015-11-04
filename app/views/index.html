@@ -2,19 +2,39 @@
 <html lang="" class="no-js">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-Compatible" content="ie=edge">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,400italic,700,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Rokkitt&amp;text=“”" rel="stylesheet" type="text/css">
     <link href="../assets/styles/app.css" media="screen" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" sizes="57x57" href="../assets/media/favicons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../assets/media/favicons/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../assets/media/favicons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/media/favicons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../assets/media/favicons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../assets/media/favicons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../assets/media/favicons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../assets/media/favicons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/media/favicons/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="../assets/media/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../assets/media/favicons/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="../assets/media/favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="../assets/media/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="../assets/media/favicons/manifest.json">
+    <link rel="mask-icon" href="../assets/media/favicons/safari-pinned-tab.svg" color="#41cca5">
+    <meta name="apple-mobile-web-app-title" content="David Cazalis">
+    <meta name="application-name" content="David Cazalis">
+    <meta name="msapplication-TileColor" content="#41cca5">
+    <meta name="msapplication-TileImage" content="../assets/media/favicons/mstile-144x144.png">
+    <meta name="theme-color" content="#41cca5">
   </head>
   <body>
     <div id="main-wrapper" class="is-loading u-wrapper">
       <div class="m-landing">
         <header role="banner" id="header" class="m-header">
           <div class="m-header__logo">
-            <h1 class="c-logo"><a href="#" id="main-logo" class="c-logo__link"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48" xml:space="preserve" class="c-logo--svg">
+            <h1 class="c-logo"><span id="main-logo" class="c-logo__link"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" width="48px" height="48px" viewBox="0 0 48 48" xml:space="preserve" class="c-logo--svg">
   <title>David Cazalis</title>
   <g class="c-logo__dc">
   	<path fill="currentColor" class="c-logo__path" d="M33,31.6c-4,0-7.3-3.3-7.3-7.3c0-5.5-4.5-10-10-10c-0.7,0-1.4,0.6-1.4,1.4s0.6,1.4,1.4,1.4
@@ -26,14 +46,14 @@
   </g>
   <circle class="c-logo__circle c-logo__path" cx="24" cy="24" r="22.5" stroke="currentColor" stroke-width="2" fill="none" />
 </svg>
-</a></h1>
+</span></h1>
           </div>
           <div class="m-header__nav">
             <nav role="navigation" id="navigation" class="c-navigation">
               <ul class="c-navigation__list">
-                <li class="c-navigation__list__item"><a href="#work">Work</a></li>
-                <li class="c-navigation__list__item"><a href="#about">About</a></li>
-                <li class="c-navigation__list__item"><a href="#contact">Contact</a></li>
+                <li class="c-navigation__list__item"><a href="#projets" class="js-scroll">Projets</a></li>
+                <li class="c-navigation__list__item"><a href="#a-propos" class="js-scroll">A propos</a></li>
+                <li class="c-navigation__list__item"><a href="#contact" class="js-scroll">Contact</a></li>
               </ul>
             </nav>
           </div>
@@ -41,16 +61,16 @@
         <section id="hero" class="m-hero o-section--align-vert">
           <div class="o-row u-align--center">
             <div class="m-hero__title o-island--vert o-column medium-10 medium-offset-1"><span class="typo-hero">David Cazalis</span>
-              <h2 class="typo-hero--body">Développeur front-end et webdesigner, à Clermont-Ferrand en France.</h2>
+              <h2 class="typo-hero--body">Développeur front-end & webdesigner.</h2>
             </div>
-            <div class="m-hero__cta o-island--vert o-column"><a href="mailto:davidcazalis@gmail.com" class="c-btn">Me contacter</a><a href="#" class="c-btn--secondary">En savoir plus</a></div>
+            <div class="m-hero__cta o-island--vert o-column"><a href="mailto:davidcazalis@gmail.com?subject=Hello." class="c-btn">Me contacter par mail</a><a href="#projets" class="c-btn--secondary js-scroll">En savoir plus</a></div>
           </div>
         </section>
       </div>
-      <section class="m-portfolio o-section">
+      <section id="projets" class="m-portfolio o-section">
         <header class="o-row u-align--center o-section__head">
           <h2>Projets</h2>
-          <p class="typo-lead">Une petite selection des quelques projets sur lesquels j'ai collaboré.</p>
+          <p class="typo-lead">Une sélection de projets auxquels j'ai collaboré.</p>
         </header>
         <div class="o-row">
           <div class="o-column large-6">
@@ -99,7 +119,7 @@
               <div class="c-project__body">
                 <div class="c-project__body__infos">
                   <div class="c-project__body__infos__item"><span class="typo-project-label">Projet porté par</span><a href="http://notorius-studio.com/" target="_blank" class="typo-project-info">Notorius Studio</a></div>
-                  <div class="c-project__body__infos__item"><span class="typo-project-label">Mon rôle</span><span class="typo-project-info">Front-end</span></div>
+                  <div class="c-project__body__infos__item"><span class="typo-project-label">Mon rôle</span><span class="typo-project-info">Dev &amp; Front-end</span></div>
                 </div>
                 <div class="c-project__body__link"><a href="http://amisdomainerandan.org/" target="_blank" class="typo-project-link">Voir le site</a></div>
               </div>
@@ -159,16 +179,16 @@
           </div>
         </div>
       </section>
-      <section class="m-about o-section o-section--align-vert">
+      <section id="a-propos" class="m-about o-section o-section--align-vert">
         <div class="o-row">
           <div class="o-column large-6 m-about__column">
             <header class="o-section__head">
               <h2>À propos</h2>
             </header>
             <p class="typo-lead">Développeur front-end créatif. Ou quelque chose comme ça ...</p>
-            <p> David est un développeur front-end et un graphiste freelance. Comme tout les gens de sa profession il est passionné par son métier et parle de lui à la troisième personne.</p>
-            <p>Il c'est promis de ne pas parler d'<em>UX</em> et d'<em>UI</em> et de ne pas faire l'étalage des outils et techniques qu'il utilise, mais vous invite plutôt à vous faire votre propre idée sur le sujet à travers son travail.</p>
-            <div class="o-island--vert u-align--center"><a href="#" class="c-btn">Me contacter par mail</a></div>
+            <p>David est un développeur front-end et un graphiste freelance. Comme tous les gens de sa profession il est passionné par son métier et parle de lui à la troisième personne.</p>
+            <p>Il s'est promis de ne pas parler d'<em>UX</em> et d'<em>UI</em> et de ne pas faire l'étalage des outils et techniques qu'il utilise, mais vous invite plutôt à vous faire votre propre idée sur le sujet à travers son travail, ou sur <a href="https://github.com/davidcazalis/" target="_blank">GitHub</a> par exemple.</p>
+            <div class="o-island--vert u-align--center"><a href="mailto:davidcazalis@gmail.com?subject=Hello." class="c-btn">Me contacter par mail</a></div>
           </div>
           <div class="o-column large-5 m-about__column">
             <div class="c-social-sidebar">
@@ -184,7 +204,7 @@
           </div>
         </div>
       </section>
-      <section class="m-testimonial o-section">
+      <section id="temoignages" class="m-testimonial o-section">
         <div class="o-row">
           <div class="o-column medium-10 medium-offset-1">
             <div class="o-section__head u-align--center">
@@ -200,29 +220,30 @@
         </div>
       </section>
       <div class="m-notorius-wrapper">
-        <section class="m-notorius o-section">
+        <section id="notorius" class="m-notorius o-section">
           <div class="o-row">
             <div class="o-section__head u-align--center">
               <h2>Notorius Studio</h2>
             </div>
             <div class="o-column large-12">
               <div class="m-notorius__content">
-                <p>Je collabore régulièrement avec <a href="http://www.julienfauveau.com" target="_blank">Julien Fauveau</a>, un webdesigner et illustrateur avec qui je partage la même exigence et conception du métier.</p>
+                <p>Je travail principalement en freelance, mais je collabore également avec <a href="http://www.julienfauveau.com" target="_blank">Julien Fauveau</a>, un webdesigner et illustrateur avec qui je partage la même exigence et conception du métier.</p>
                 <p>À nous deux nous formons <a href="http://www.notorius-studio.com" target="_blank">Notorius Studio</a> : une petite équipe flexible et très fiable, idéale pour les agences ou les petites structures souhaitant externaliser leur conception graphique digitale.</p>
+                <p> </p>
               </div>
             </div>
           </div>
         </section>
-        <div class="m-contact">
+        <div id="contact" class="m-contact">
           <div class="o-row">
             <div class="o-column large-12 u-align--center">
               <div class="m-contact__icon"><i class="icon--mail"></i></div>
-              <p class="o-island--vert"><span class="typo-lead">N'hésitez pas à m'écrire.</span><span class="typo-lead">Je serais ravis de parler de votre projet avec vous.</span></p><a href="#" class="c-btn">Me contacter</a>
+              <div class="o-island--vert"><span class="typo-lead">N'hésitez pas à me contacter.</span><span class="typo-lead">Je serai ravi de parler de votre projet avec vous.</span></div><a href="mailto:davidcazalis@gmail.com?subject=Hello." class="c-btn">Me contacter par mail</a>
             </div>
           </div>
         </div>
       </div>
-      <footer class="m-footer o-island--vert">
+      <footer id="footer" class="m-footer o-island--vert">
         <div class="o-row">
           <div class="m-footer__copyright">
             <div class="m-footer__copyright__logo">
@@ -234,12 +255,11 @@
             </div>
             <div class="m-footer__copyright__body"><span>© David Cazalis - 2016</span></div>
           </div>
-          <div class="m-footer__links">
-            <ul>
-              <li><a href="#">Mentions légales</a></li>
-              <li><a href="#" class="icon--github">GitHub</a></li>
-              <li><a href="" class="icon--behance">Behance</a></li>
-              <li><a href="" class="icon--twitter">Twitter</a></li>
+          <div class="m-footer__links c-navigation--secondary">
+            <ul class="c-navigation--secondary__list">
+              <li class="c-navigation--secondary__list__item"><a href="https://github.com/davidcazalis/" target="_blank"><i class="icon--github"></i><span>GitHub</span></a></li>
+              <li class="c-navigation--secondary__list__item"><a href="https://www.behance.net/davidcazalis" target="_blank"><i class="icon--behance"></i><span>Behance</span></a></li>
+              <li class="c-navigation--secondary__list__item"><a href="https://twitter.com/davidcazalis" target="_blank"><i class="icon--twitter"></i><span>Twitter</span></a></li>
             </ul>
           </div>
         </div>
@@ -247,6 +267,15 @@
     </div>
     <script src="../scripts/vendor.js"></script>
     <script src="../scripts/app.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-20491370-1', 'auto');
+      ga('send', 'pageview');
+    </script>
   </body>
 </html>
 <!-- Coucou copain. Tu peux récupérer les sources de ce projet sur https://github.com/davidcazalis/portfolio si tu es vraiment curieux.-->

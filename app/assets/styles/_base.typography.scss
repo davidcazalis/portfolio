@@ -31,6 +31,14 @@ h6 {
   @include bp(medium) {
     margin-bottom: _rem($_base-font-space);
   }
+
+  &.has-nospace {
+    margin-bottom: 0;
+
+    @include bp(medium) {
+      margin-bottom: 0;
+    }
+  }
 }
 
 h1 {

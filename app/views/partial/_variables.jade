@@ -1,5 +1,17 @@
 append variables
-  - var stylesPath = styles.dest.replace("app/", "../")
-  - var scriptsPath = scripts.dest.replace("app/", "../")
-  - var mediaPath = media.src.replace("app/", "../")
-  - var navSection = ['Work', 'About', 'Contact']
+  if prod == true
+    - var stylesPath = styles.build.replace("build/", "")
+    - var scriptsPath = scripts.build.replace("build/", "")
+    - var mediaPath = media.dest.replace("build/", "")
+  else
+    - var stylesPath = styles.dest.replace("app/", "../")
+    - var scriptsPath = scripts.dest.replace("app/", "../")
+    - var mediaPath = media.src.replace("app/", "../")
+  - var navSection = ['Projets', 'A propos', 'Contact']
+  - var contactMail = 'mailto:davidcazalis@gmail.com?subject=Hello.'
+  - var projects = ['Monbento', 'Les amis du domaine royale de Randan', 'Euromaster', 'Fidroit']
+  - var projectsUrl = ['http://www.monbento.com/appli/', 'http://amisdomainerandan.org/', 'http://www.euromastergroup.com/', 'http://fidroit.fr/']
+  - var projectsFiles = ['monbento', 'randan', 'euromaster', 'fidroit']
+  - var projectsAgencies = ['De Bussac Multimédia', 'Notorius Studio', 'Periscope Creations', 'Agence 1989']
+  - var projectsAgenciesUrl = ['http://www.debussac.net/', 'http://notorius-studio.com/', 'http://periscope.digital/', 'http://1989.agency/']
+  - var projectsRoles = ['Front-end', 'Dev & Front-end', 'Front-end', 'Front-end']

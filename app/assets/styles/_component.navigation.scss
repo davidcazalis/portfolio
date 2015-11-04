@@ -18,10 +18,14 @@
     justify-content: space-between;
 
     &__item {
+      font-weight: bold;
+
       a {
         color: $_color-white;
         padding-left: $_layout-space/2;
         padding-right: $_layout-space/2;
+        margin-right: $_layout-space/2;
+        margin-left: $_layout-space/2;
         padding-bottom: $_layout-space/2;
         position: relative;
 
@@ -42,6 +46,42 @@
 
           &:before {
             width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &--secondary {
+    padding-top: _em($_layout-space/2);
+    padding-bottom: _em($_layout-space/2);
+
+    &__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      &__item {
+        display: inline-block;
+
+        i + span {
+          display: none;
+          @include bp(small) {
+            display: inline-block;
+          }
+        }
+
+        & + .c-navigation--secondary__list__item {
+          margin-left: _em($_layout-space)
+        }
+
+        [class*="icon"]:before {
+          margin-right: .3em;
+          color: $_color-brand;
+          font-size: 2em;
+
+          @include bp(small) {
+            color: $_color-grey;
           }
         }
       }

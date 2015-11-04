@@ -285,7 +285,7 @@
 
       @include bp(small) {
         transition: all cubic-bezier(0.45, 0.48, 0, 1.18) .5s .5s;
-        color: $_color-grey-light;
+        color: $_color-grey;
       }
 
       @include bp(large) {

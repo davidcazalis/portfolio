@@ -10,5 +10,5 @@
   "unused": "vars",
   "strict": true,
   "browser": true,
-  "predef": ["$", "jQuery", "Modernizr", "Snap"]
+  "predef": ["$", "jQuery", "Modernizr", "Snap", "Instafeed", "twitterFetcher", "svg4everybody"]
 }

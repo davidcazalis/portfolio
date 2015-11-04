@@ -11,9 +11,13 @@
   height: _em(48px);
   position: relative;
   vertical-align: top;
-  transition: all ease .2s;
   transform: translate(0, 0);
   opacity: 1;
+  transition: all ease .2s;
+
+  a {
+    transition: all ease .2s;
+  }
 
   svg {
     position: absolute;
