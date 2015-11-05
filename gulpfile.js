@@ -65,18 +65,21 @@ gulp.task('svg-sprite', function() {
 
 // Images optimisation
 gulp.task('media', function() {
-  return gulp.src(config.media.src+'/**/*')
+  return gulp.src(['**/*'], {cwd: config.media.src})
     .pipe(!options.production ? plumber() : gutil.noop())
     .pipe(gulpif(options.production, imagemin({
       progressive: true,
-      svgoPlugins: [{
-        removeViewBox: false,
-        cleanupIDs: false
-      }],
+      svgoPlugins: [{removeViewBox:false}, {cleanupIDs:false}, {removeDoctype:false}],
       use: [pngquant()]
     })))
     .pipe(gulpif(options.production, gulp.dest(config.media.dest)))
     .pipe(!options.production ? browserSync.stream() : gutil.noop());
+});
+
+// /!\ Ugly fix for production sprite bug  /!\
+gulp.task('svg-sprite-fix', function() {
+  return gulp.src(config.media.src+'/sprite.svg')
+    .pipe(!options.production ? gutil.noop() : gulp.dest(config.media.dest))
 });
 
 // Create fonts from SVG icons
