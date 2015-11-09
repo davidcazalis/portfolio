@@ -25,7 +25,7 @@
   margin-right: _em($_base-font-space/4);
 
   @include bp(medium) {
-    font-size: _em(($_base-font-size)-2);,
+    font-size: _em(($_base-font-size)-2);
   }
 
   @include bp(large) {

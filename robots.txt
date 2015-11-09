@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /assets/fonts/
+Disallow: /assets/icons/
+Disallow: /assets/media/
+Disallow: /styleguide.html

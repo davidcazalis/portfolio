@@ -24,7 +24,7 @@ append main
             .m-hero__cta.o-island--vert.o-column
               a.c-btn(href="#{contactMail}") Me contacter par mail
               a.c-btn--secondary.js-scroll(href="#projets") En savoir plus
-  
+              
   block portfolio
     section.m-portfolio.o-section(id="projets")
       header.o-row.u-align--center.o-section__head
@@ -37,7 +37,8 @@ append main
               .c-project__overlay
                 svg(xmlns="http://www.w3.org/2000/svg" version="1.1" width="580px" height="310px" viewBox="0 0 580 310" xml:space="preserve" preserveAspectRatio="none")
                   title #{project}
-                  rect.c-project__overlay__rect(width="580" height="310" fill="transparent" stroke="currentColor" stroke-width=".35em" stroke-dasharray="4000" stroke-dashoffset="4000")
+                  g
+                    rect.c-project__overlay__rect(width="580" height="310" fill="transparent" stroke="currentColor" stroke-width=".35em" stroke-dasharray="4000" stroke-dashoffset="4000")
               .c-project__figure
                 div.c-project__figure__logo
                   .u-svg-wrapper
@@ -88,11 +89,6 @@ append main
             h2 Testimonial
           .m-testimonial(id="testimonial")
           
-          - var quotes = ["David apporte beaucoup à notre équipe. Il est curieux, compétent et doté d'une très bonne culture web. Travailler avec lui est un réel plaisir, et une véritable valeur ajoutée pour nos projets."]
-          - var quotesAvatar = ['https://media.licdn.com/mpr/mpr/shrinknp_100_100/AAEAAQAAAAAAAAJ7AAAAJDU5ODMzM2UyLWE3YTMtNGQ1Ni05N2RhLWEwNTczODUxN2MzMA.jpg']
-          - var quotesAuthor = ['Julien Fauveau']
-          - var quotesAuthorUrl = ['http://www.julienfauveau.com/']
-          
           each quote, index in quotes
             blockquote.typo-quote
               p #{quote}
@@ -124,7 +120,7 @@ append main
               
 
   block footer
-    footer.m-footer.o-island--vert(id="footer")
+    footer.m-footer.o-island--vert(id="footer" role="contentinfo")
       .o-row
         .m-footer__copyright
           .m-footer__copyright__logo

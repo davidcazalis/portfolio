@@ -8,6 +8,8 @@ doctype html
 html(class='no-js' lang='')
   head
     block head
+      title #{appTitle}
+      meta(name="description" content="#{appDescription}")
       meta(charset='utf-8')
       meta(http-equiv='x-ua-compatible' content='ie=edge')
       meta(name='viewport' content='width=device-width, initial-scale=1')
@@ -30,11 +32,23 @@ html(class='no-js' lang='')
       link(rel="icon", type="image/png", href="#{mediaPath}/favicons/favicon-16x16.png", sizes="16x16")
       link(rel="manifest", href="#{mediaPath}/favicons/manifest.json")
       link(rel="mask-icon", href="#{mediaPath}/favicons/safari-pinned-tab.svg", color="#41cca5")
-      meta(name="apple-mobile-web-app-title", content="David Cazalis")
-      meta(name="application-name", content="David Cazalis")
+      meta(name="apple-mobile-web-app-title", content="#{appTitle}")
+      meta(name="application-name", content="#{appTitle}")
       meta(name="msapplication-TileColor", content="#41cca5")
       meta(name="msapplication-TileImage", content="#{mediaPath}/favicons/mstile-144x144.png")
       meta(name="theme-color", content="#41cca5")
+      meta(name="twitter:card" content="summary")
+      meta(name="twitter:site" content="@davidcazalis")
+      meta(name="twitter:title" content="#{appTitle}")
+      meta(name="twitter:description" content="#{appDescription}")
+      meta(name="twitter:image" content="#{appLogo}")
+      meta(name="og:title" content="#{appTitle}")
+      meta(name="og:type" content="website")
+      meta(name="og:descrption" content="#{appDescription}")
+      meta(name="og:url" content="http://www.davidcazalis.net")
+      meta(name="og:image" content="#{appLogo}")
+      
+      
   body
     .is-loading.u-wrapper(id="main-wrapper")
       block main
