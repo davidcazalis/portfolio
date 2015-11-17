@@ -32,7 +32,8 @@ var gulp = require('gulp'),
   iconfont = require('gulp-iconfont'),
   shell = require('gulp-shell'),
   svgSprite = require('gulp-svg-sprite'),
-  bower = require('gulp-bower');
+  bower = require('gulp-bower'),
+  size = require('gulp-size');
 
 function clean(path, files) {
   gutil.log(gutil.colors.grey('Clean ' + files + ' files.'));
@@ -128,6 +129,7 @@ gulp.task('styles', function() {
       cascade: false
     }))
     .pipe(sourcemaps.write())
+    .pipe(size())
     .pipe(!options.production ? gulp.dest(config.styles.dest) : gulp.dest(config.styles.build))
     .pipe(!options.production ? browserSync.stream() : gutil.noop());
 });
@@ -174,6 +176,7 @@ gulp.task('scripts:vendor', function() {
     .pipe(!options.production ? gutil.noop() : uglify({
       preserveComments: 'some'
     }))
+    .pipe(size())
     .pipe(!options.production ? gulp.dest(config.scripts.dest) : gulp.dest(config.scripts.build))
     .pipe(!options.production ? browserSync.stream() : gutil.noop());
 });
@@ -187,6 +190,7 @@ gulp.task('scripts:app', function() {
     .pipe(!options.production ? gutil.noop() : uglify({
       preserveComments: 'some'
     }))
+    .pipe(size())
     .pipe(!options.production ? gulp.dest(config.scripts.dest) : gulp.dest(config.scripts.build))
     .pipe(!options.production ? browserSync.stream() : gutil.noop());
 });
