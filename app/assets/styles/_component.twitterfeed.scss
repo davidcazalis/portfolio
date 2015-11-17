@@ -2,9 +2,6 @@
 // TWITTERFEED
 // ==========================================================================
 .c-twitterfeed {
-  a {
-    word-break: break-all;  
-  }
 
   ul {
     margin: 0;
@@ -50,6 +47,10 @@
 
   .tweet {
     margin: 0;
+
+    a {
+      word-break: break-all;
+    }
   }
 
 }
