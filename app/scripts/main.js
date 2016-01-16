@@ -48,6 +48,7 @@ var app;
         "id": '659738790173548544',
         "domId": 'twitterfeed',
         "maxTweets": 2,
+        "showUser": true,
         "enableLinks": true,
         "showPermalinks": false,
         "showImages": false,
